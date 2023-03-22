@@ -8,8 +8,8 @@ import { Observable } from 'rxjs';
 export class DataService {
   private date: Date = new Date();
   private year: number = this.date.getFullYear();
-  private categoryName: string = "f1";
-  private apiUrl: string = `https://ergast.com/api/${this.categoryName}`;
+  private apiUrl: string = `https://ergast.com/api/f1`;
+  private mediaUrl: string = `https://media.formula1.com/content/dam/fom-website/2018-redesign-assets`;
 
   constructor(private http: HttpClient) { }
 

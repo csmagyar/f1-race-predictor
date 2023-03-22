@@ -1,1 +1,22 @@
-<p>calendar works!</p>
+<div class="container">
+    <div class="row d-flex flex-wrap">
+        <div *ngFor="let race of raceCalendar.Races" class="col-12 col-sm-6 col-lg-4 col-xl-3 my-3">
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <div class="d-flex justify-content-between">
+                        <div>
+                            <p><span class="badge text-bg-secondary">{{race.date}}</span></p>
+                            <legend class="small"><span class="badge text-bg-success">ROUND {{race.round}}</span>
+                            </legend>
+                        </div>
+                    </div>
+                    <hr>
+                    <h5 class="card-title"><strong>{{race.raceName}}</strong></h5>
+                    <em>{{race.Circuit.circuitName}}</em>
+                    <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                    <hr>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
