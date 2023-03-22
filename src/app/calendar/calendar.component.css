@@ -1,3 +1,11 @@
+.country-flag {
+    width: 48px;
+    border: 1px solid #949498;
+    border-radius: 6px;
+    overflow: hidden;
+    height: fit-content;
+}
+
 .container {
     margin: 2em auto;
 }
