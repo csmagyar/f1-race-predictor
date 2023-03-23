@@ -6,12 +6,14 @@ import { HeaderComponent } from './header/header.component';
 import { CalendarComponent } from './calendar/calendar.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
+import { CalendarItemComponent } from './calendar/calendar-item/calendar-item.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    CalendarComponent
+    CalendarComponent,
+    CalendarItemComponent
   ],
   imports: [
     BrowserModule,

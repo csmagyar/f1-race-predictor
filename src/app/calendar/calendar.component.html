@@ -1,29 +1,7 @@
 <div class="container">
     <div class="row d-flex flex-wrap">
         <div *ngFor="let race of raceCalendar.Races" class="col-12 col-sm-6 col-lg-4 col-xl-3 my-3">
-            <div class="card" style="width: 18rem;">
-                <div class="card-body">
-                    <div class="d-flex justify-content-between">
-                        <div>
-                            <p><span class="badge text-bg-secondary">{{race.date}}</span></p>
-                            <legend class="small"><span class="badge text-bg-success">ROUND {{race.round}}</span>
-                            </legend>
-                        </div>
-                        <div class="country-flag">
-                            <img class="d-block" [src]="race.Circuit.Location.countryFlagImg" alt="" width="100%"
-                                height="auto">
-                        </div>
-                    </div>
-                    <hr>
-                    <h5 class="card-title"><strong>{{race.raceName}}</strong></h5>
-                    <em>{{race.Circuit.circuitName}}</em>
-                    <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
-                    <hr>
-                </div>
-                <div style="height: 108px;" class="text-center">
-                    <img [src]="race.Circuit.Location.trackLayoutImg" alt="..." height="100%" width="auto">
-                </div>
-            </div>
+            <app-calendar-item [raceDetails]="race"></app-calendar-item>
         </div>
     </div>
 </div>
