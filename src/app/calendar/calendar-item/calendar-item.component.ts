@@ -12,6 +12,8 @@ export class CalendarItemComponent implements OnInit {
   hovering = false;
   isPastDate: boolean = false;
 
+  constructor(private route: ActivatedRoute, private router: Router) {}
+
   ngOnInit(): void {
     // if current date is greater than race date, then return false
     this.isPastDate = new Date().getTime() > new Date(`${this.raceDetails.date} ${this.raceDetails.time}`).getTime();
@@ -27,4 +29,7 @@ export class CalendarItemComponent implements OnInit {
     this.hovering = false;
   }
 
+  onSeeResult() {
+    this.router.navigate(['results',this.raceDetails.season,this.raceDetails.round]);
+  }
 }
