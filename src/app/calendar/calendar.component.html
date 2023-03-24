@@ -1,7 +1,6 @@
 <div class="container">
-    <div class="row d-flex flex-wrap">
-        <div *ngFor="let race of raceCalendar.Races" class="col-12 col-sm-6 col-lg-4 col-xl-3 my-3">
-            <app-calendar-item [raceDetails]="race"></app-calendar-item>
-        </div>
+    <div class="row d-flex flex-wrap ">
+        <app-calendar-item *ngFor="let race of raceCalendar.Races" [raceDetails]="race"
+            class="col-12 col-sm-6 col-lg-4 col-xl-3 my-3"></app-calendar-item>
     </div>
 </div>
