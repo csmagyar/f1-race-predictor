@@ -1,4 +1,4 @@
-<div class="card" style="width: 18rem;">
+<div class="card mx-3 h-100">
     <div class="card-body">
         <div class="d-flex justify-content-between">
             <div>
@@ -12,12 +12,18 @@
             </div>
         </div>
         <hr>
-        <h5 class="card-title"><strong>{{raceDetails.raceDetailsName}}</strong></h5>
-        <em>{{raceDetails.Circuit.circuitName}}</em>
+        <h5 class="card-title"><strong>{{raceDetails.raceName}}</strong></h5>
+        <em>{{raceDetails.Circuit.circuitName | uppercase}}</em>
         <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
         <hr>
     </div>
     <div style="height: 108px;" class="text-center">
         <img [src]="raceDetails.Circuit.Location.trackLayoutImg" alt="..." height="100%" width="auto">
+    </div>
+    <div class="hover-info card d-flex justify-content-center align-content-center" [class.show]="hovering">
+        <button *ngIf="isPastDate" class="btn btn-info my-1" type="button" (click)="onSeeResult()">See race
+            results</button>
+        <button *ngIf="!isPastDate" class="btn btn-success my-1" type="button">Predict</button>
+        <button class="btn btn-primary my-1" type="button">See leaderboard</button>
     </div>
 </div>
