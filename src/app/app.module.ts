@@ -8,6 +8,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { CalendarItemComponent } from './calendar/calendar-item/calendar-item.component';
 import { ResultComponent } from './result/result.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,8 @@ import { ResultComponent } from './result/result.component';
     CalendarComponent,
     CalendarItemComponent,
     ResultComponent
+    ResultComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
