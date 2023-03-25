@@ -8,6 +8,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { CalendarItemComponent } from './calendar/calendar-item/calendar-item.component';
 import { ResultComponent } from './result/result.component';
+import { ShortenPipe } from './shared/shorten.pipe';
 import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
@@ -16,8 +17,8 @@ import { FooterComponent } from './footer/footer.component';
     HeaderComponent,
     CalendarComponent,
     CalendarItemComponent,
-    ResultComponent
     ResultComponent,
+    ShortenPipe,
     FooterComponent,
   ],
   imports: [

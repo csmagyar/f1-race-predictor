@@ -33,7 +33,7 @@
                                     <td>{{driver.position}}</td>
                                     <td>{{driver.Driver.givenName}}
                                         {{driver.Driver.familyName}}</td>
-                                    <td colspan="2">{{driver.Constructor.name}}
+                                    <td colspan="2">{{driver.Constructor.name | shorten}}
                                     </td>
                                     <td class="d-none d-sm-table-cell">{{driver.laps}}</td>
                                     <td class="d-none d-sm-table-cell">{{!!driver.Time ? driver.Time.time :
