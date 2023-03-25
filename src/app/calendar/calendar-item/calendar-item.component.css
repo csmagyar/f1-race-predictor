@@ -15,7 +15,8 @@
 }
 
 .card {
-    position: relative; /* Make the card container relative so that we can position the extra-info absolutely */
+    position: relative;
+    background-image: linear-gradient(to bottom right, #ffffff, #dddddd);
   }
   
   .card-body {
@@ -35,6 +36,8 @@
     transition: height 0.3s ease-out, visibility 0.3s ease-out 0.05s;
     overflow: hidden;
     visibility: hidden;
+    border: var(--bs-card-border-width) solid var(--bs-card-border-color);
+    border-radius: var(--bs-card-border-radius);
   }
   
   .card:hover .hover-info {
@@ -58,4 +61,18 @@
   .card:not(:hover) .hover-info {
     height: 0;
     visibility: hidden;
+  }
+
+  .gp-info .race-title {
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 24px;
+    margin-bottom: 0.3em;
+  }
+
+  .gp-info .circuit-name {
+    font-size: 14px;
+    line-height: 15px;
+    letter-spacing: .5px;
+    font-weight: 400;
   }
