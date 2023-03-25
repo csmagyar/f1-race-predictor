@@ -13,7 +13,7 @@ export class AuthService {
   user = new BehaviorSubject<User | null>(null);
   private tokenExpirationTimer: any;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private router: Router) { }
 
   signup(email: string, password: string) {
     return this.http.post<AuthResponseData>(`https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=${environment.firebaseAPIKey}`,
@@ -34,6 +34,17 @@ export class AuthService {
     }).pipe(catchError(this.handleError), tap(resData => {
       this.handleAuthentication(resData.email, resData.localId, resData.idToken, +resData.expiresIn)
     }));
+  }
+
+  logout() {
+    this.user.next(null);
+    this.router.navigate(['/auth']);
+    localStorage.removeItem('userData');
+    if (this.tokenExpirationTimer) {
+      clearTimeout(this.tokenExpirationTimer);
+    }
+
+    this.tokenExpirationTimer = null;
   }
 
   private handleAuthentication(email: string, userId: string, token: string, expiresIn: number) {
