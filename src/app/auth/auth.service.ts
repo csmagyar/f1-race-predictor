@@ -26,6 +26,16 @@ export class AuthService {
     }));
   }
 
+  login(email: string, password: string) {
+    return this.http.post<AuthResponseData>(`https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=${environment.firebaseAPIKey}`,{
+      email: email,
+      password: password,
+      returnSecureToken: true
+    }).pipe(catchError(this.handleError), tap(resData => {
+      this.handleAuthentication(resData.email, resData.localId, resData.idToken, +resData.expiresIn)
+    }));
+  }
+
   private handleAuthentication(email: string, userId: string, token: string, expiresIn: number) {
     const expirationDate = new Date(new Date().getTime() + expiresIn*1000);
     this.autoLogout(expiresIn*1000);
