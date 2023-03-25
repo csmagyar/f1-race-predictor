@@ -1,1 +1,50 @@
-<p>result works!</p>
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-10 offset-md-1">
+            <div class="card shadow-lg">
+                <div class="card-body">
+                    <h4 class="card-title text-center mb-4">{{raceName}}</h4>
+                    <div class="row">
+                        <div *ngFor="let driver of top3" class="col-4 podium-position">
+                            <div class="text-center">
+                                <img [src]="'/assets/leaderboard/'+driver.position+'-medal.png'"
+                                    class="img-fluid rounded-circle mb-2">
+                                <h5 class="mb-0">{{driver.Driver.givenName}}
+                                    {{driver.Driver.familyName}}</h5>
+                                <span class="text-muted">{{driver.Constructor.name}}</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table table-striped mt-4">
+                            <thead>
+                                <tr>
+                                    <th>Pos.</th>
+                                    <th>Driver</th>
+                                    <th colspan="2">Constructor</th>
+                                    <th class="d-none d-sm-table-cell">Laps</th>
+                                    <th class="d-none d-sm-table-cell">Time</th>
+                                    <th>Pts.</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let driver of others"
+                                    [ngClass]="{fastestLap: !!driver.FastestLap && +driver.FastestLap.rank === 1}">
+                                    <td>{{driver.position}}</td>
+                                    <td>{{driver.Driver.givenName}}
+                                        {{driver.Driver.familyName}}</td>
+                                    <td colspan="2">{{driver.Constructor.name}}
+                                    </td>
+                                    <td class="d-none d-sm-table-cell">{{driver.laps}}</td>
+                                    <td class="d-none d-sm-table-cell">{{!!driver.Time ? driver.Time.time :
+                                        driver.status}}</td>
+                                    <td>{{driver.points}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

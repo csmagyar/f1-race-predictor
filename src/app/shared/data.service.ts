@@ -31,7 +31,7 @@ export class DataService {
 
   getRaceResults(year: number, round: number): Observable<any> {
     return this.http.get<any>(`${this.apiUrl}/${year}/${round}/results.json`).pipe(tap(result => {
-      console.log(result);
+      // console.log(result);
     }));
   }
 
