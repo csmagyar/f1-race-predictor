@@ -10,7 +10,7 @@ import { User } from './user.model';
   providedIn: 'root'
 })
 export class AuthService {
-  user = new BehaviorSubject<User | null>(null);
+  user = new BehaviorSubject<User>(null);
   private tokenExpirationTimer: any;
 
   constructor(private http: HttpClient, private router: Router) { }
@@ -23,7 +23,8 @@ export class AuthService {
       returnSecureToken: true
     }).pipe(catchError(this.handleError), tap(resData => {
       this.handleAuthentication(resData.email, resData.localId, resData.idToken, +resData.expiresIn)
-    }));
+    })
+    );
   }
 
   login(email: string, password: string) {
