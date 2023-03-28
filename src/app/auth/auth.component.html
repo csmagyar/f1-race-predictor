@@ -5,7 +5,7 @@
                 <div class="card-body">
                     <img [src]="isLogin ? '/assets/auth/log-in.png' : '/assets/auth/sign-up.png'"
                         class="card-title mb-4 mx-auto d-block">
-                    <form #authForm="ngForm">
+                    <form #authForm="ngForm" (ngSubmit)="onSubmit(authForm)">
                         <!-- TODO it will be implemented later -->
                         <!-- <div *ngIf="!isLogin" class="form-group">
                             <input type="text" class="form-control" name="username" id="username" placeholder="Username"
