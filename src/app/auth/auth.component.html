@@ -5,19 +5,29 @@
                 <div class="card-body">
                     <img [src]="isLogin ? '/assets/auth/log-in.png' : '/assets/auth/sign-up.png'"
                         class="card-title mb-4 mx-auto d-block">
-                    <form>
-                        <div class="form-group">
-                            <input type="email" class="form-control" id="email" placeholder="Email">
+                    <form #authForm="ngForm">
+                        <!-- TODO it will be implemented later -->
+                        <!-- <div *ngIf="!isLogin" class="form-group">
+                            <input type="text" class="form-control" name="username" id="username" placeholder="Username"
+                                ngModel required>
+                        </div> -->
+                        <div class="form-group pt-3">
+                            <input type="email" class="form-control" name="email" id="email" placeholder="Email" ngModel
+                                required email>
                         </div>
                         <div class="form-group pt-3">
-                            <input type="password" class="form-control" id="password" placeholder="Password">
+                            <input type="password" class="form-control" name="password" id="password"
+                                placeholder="Password" required minlength="8" ngModel
+                                title="Password must be at least 8 characters long!" data-toggle="tooltip"
+                                data-placement="top">
                         </div>
-                        <div class="form-group" *ngIf="!isLogin">
+                        <!-- TODO It will be implemented later -->
+                        <!-- <div class="form-group" *ngIf="!isLogin">
                             <label for="confirmPassword">Confirm Password</label>
                             <input type="password" class="form-control" id="confirmPassword"
                                 placeholder="Confirm Password">
-                        </div>
-                        <button class="btn btn-primary mt-4 w-100">
+                        </div> -->
+                        <button [disabled]="authForm.invalid" class="btn btn-primary mt-4 w-100">
                             {{isLogin ? 'Log In' : 'Sign Up'}}
                         </button>
                     </form>
