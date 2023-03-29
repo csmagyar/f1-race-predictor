@@ -11,6 +11,7 @@ import { ResultComponent } from './result/result.component';
 import { ShortenPipe } from './shared/shorten.pipe';
 import { FooterComponent } from './footer/footer.component';
 import { AuthModule } from './auth/auth.module';
+import { PredictComponent } from './predict/predict.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { AuthModule } from './auth/auth.module';
     ResultComponent,
     ShortenPipe,
     FooterComponent,
+    PredictComponent,
   ],
   imports: [
     BrowserModule,
