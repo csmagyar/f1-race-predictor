@@ -12,7 +12,7 @@ import { HttpClientModule } from '@angular/common/http';
     FormsModule,
     HttpClientModule,
     RouterModule.forChild([ 
-      { path: '', component: AuthComponent/* , canActivate: [] */ },
+      { path: '', component: AuthComponent },
     ])
   ]
 })
