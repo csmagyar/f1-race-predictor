@@ -12,6 +12,7 @@ import { ShortenPipe } from './shared/shorten.pipe';
 import { FooterComponent } from './footer/footer.component';
 import { AuthModule } from './auth/auth.module';
 import { PredictComponent } from './predict/predict.component';
+import { StandingsComponent } from './standings/standings.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { PredictComponent } from './predict/predict.component';
     ShortenPipe,
     FooterComponent,
     PredictComponent,
+    StandingsComponent,
   ],
   imports: [
     BrowserModule,
